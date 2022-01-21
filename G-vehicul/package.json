@@ -1,0 +1,20 @@
+{
+  "name": "marjane-restapis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node Backoffice/Server.js",
+    "dev": "SET NODE_ENV=dev& nodemon Backoffice/Server",
+    "prod": "SET NODE_ENV=prod& nodemon Backoffice/Server",
+    "seeder": "node BackOffice/utils/seeder.js"
+  },
+  "author": "Zaineb-Belbhiriya",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^12.0.3",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6",
+    "nodemon": "^2.0.15"
+  }
+}

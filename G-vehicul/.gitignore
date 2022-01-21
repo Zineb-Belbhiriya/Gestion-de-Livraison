@@ -1,0 +1,3 @@
+node_modules/
+BackOffice/configs/config.env/
+FrontOffice/configs/config.env/
