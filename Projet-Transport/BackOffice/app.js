@@ -1,9 +1,9 @@
+
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
 
 const middleware = require("./middleware/errors");
-
 app.use(express.json());
 app.use(cookieParser());
 

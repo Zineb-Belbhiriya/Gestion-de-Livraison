@@ -4,6 +4,7 @@ const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const sendToken = require("../utils/jwToken");
 const Truck = require("../model/truck");
+const logger = require("../utils/winston");
 
 // register new user under the url /api/v1/register
 exports.register = catchAsyncErrors(async (req, res, next) => {
@@ -18,6 +19,7 @@ exports.register = catchAsyncErrors(async (req, res, next) => {
       url: "https://api.github.com/",
     },
   });
+  logger.info(`login: User Created successfully`);
 
   sendToken(user, 200, res);
 });
@@ -43,6 +45,8 @@ exports.login = catchAsyncErrors(async (req, res, next) => {
   if (!isPasswordMatched) {
     return next(new ErrorHandler("Invalid Email or Password", 401));
   }
+  logger.info(`login: User logged in successfully!`);
+
   // res.json("allo");
   sendToken(user, 200, res);
 });
